@@ -75,8 +75,8 @@ async function getPayments(req, res) {
         const paymentList = await paymentModel.find({
             contractId: contractId,
             time: {
-                $gte: "Mon May 30 18:47:00 +0000 2015",
-                $lt: "Sun May 30 20:40:36 +0000 2010"
+                $gte: from,
+                $lt: to
             }
         })
 
