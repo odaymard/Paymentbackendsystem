@@ -73,15 +73,16 @@ async function getPayments(req, res) {
         const to = req.query.to;
 
         const paymentList = await paymentModel.find({
-            contractId:contractId,
+            contractId: contractId,
             time: {
-                $gte:from,
+                $gte: from,
                 $lt: to
 
-        }})
-      let re=  paymentList.reduce(function (acc, obj) { return acc + obj.value; }, 0); 
-                console.log(re)
-                result= re + ':' + paymentList;
+            }
+        })
+        let re = paymentList.reduce(function (acc, obj) { return acc + obj.value; }, 0);
+        console.log(re)
+        result = re + ':' + paymentList;
         res.send(result);
     } catch (err) {
         console.log(err);
