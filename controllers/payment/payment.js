@@ -80,9 +80,9 @@ async function getPayments(req, res) {
 
             }
         })
-        let re = paymentList.reduce(function (acc, obj) { return (!obj.isDeleted)? acc + obj.value:acc; }, 0);
-        console.log(re)
-       const  result =  {sum:re, iteams : {paymentList}} ;
+        let sumvalue = paymentList.reduce(function (acc, item) { return (!item.isDeleted)? acc + item.value:acc; }, 0);
+        console.log(sumvalue)
+       const  result =  {sum:sumvalue, items : {paymentList}} ;
         res.send(result);
     } catch (err) {
         console.log(err);
