@@ -40,6 +40,7 @@ async function removepayment(req, res) {
     try {
         let payment = res.locals.payment
         payment.isDeleted = true;
+        res.send(payment);
 
     } catch (err) {
         logger.info(err);

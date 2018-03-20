@@ -24,6 +24,6 @@ router.param("paymentid", function (req, res, next, value) {
 
 router.get("/",  controller.getPayments);
 router.post("/",controller.createPayment);
-//router.put("/:paymentid",controller.removepayment);
+router.patch("/:paymentid",controller.removepayment);
 router.put("/:paymentid",controller.editpayment);
 module.exports = router;
