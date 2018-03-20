@@ -1,0 +1,29 @@
+{
+  "name": "backendhomeapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/odaymard/backendtest.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/odaymard/backendtest/issues"
+  },
+  "homepage": "https://github.com/odaymard/backendtest#readme",
+  "dependencies": {
+    "chalk": "^2.3.2",
+    "express": "^4.16.3",
+    "loadash": "^1.0.0",
+    "lodash": "^4.17.5",
+    "mongoose": "^5.0.11",
+    "mongoose-auto-increment": "^5.0.1",
+    "mongoose-validator": "^2.0.2",
+    "morgan": "^1.9.0"
+  }
+}

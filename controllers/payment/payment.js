@@ -1,4 +1,4 @@
-const paymentModel = require('../../models/paymnt/payment');
+const paymentModel = require('../../models/payment/payment');
 const bodyParser = require("body-parser");
 const _ = require('lodash');
 
@@ -53,14 +53,14 @@ async function createPayment(req, res) {
         const payment = await new paymentModel(req.body);
         payment.save()
             .then(function (payment) {
-                res.success(payment); //success in adding payment
+                res.send(payment); //success in adding payment
             }).catch(function (err) {
-                res.fail(err);
+                res.send(err);
             })
     }
     catch (err) {
-        logger.error(err);
-        res.fail(err);
+        console.log(err);
+        res.send(err);
     }
 }
 
@@ -80,9 +80,9 @@ async function getPayments(req, res) {
 
             }
         })
-        let re = paymentList.reduce(function (acc, obj) { return acc + obj.value; }, 0);
+        let re = paymentList.reduce(function (acc, obj) { return (!obj.isDeleted)? acc + obj.value:acc; }, 0);
         console.log(re)
-        result = re + ':' + paymentList;
+        result = '{' + re + ':' + paymentList + '}';
         res.send(result);
     } catch (err) {
         console.log(err);
