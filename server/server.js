@@ -1,9 +1,9 @@
 
 const express = require("express")(db);
-var bodyParser = require('body-parser');
-var app = express;
-var _ = require('lodash');
-var morgan = require('morgan');
+let bodyParser = require('body-parser');
+let app = express;
+let _ = require('lodash');
+let morgan = require('morgan');
 const payment = require("../routes/payment");
 
 
@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 app.use("/payment", payment);
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost:27017/home'); // connect to our database
-var db = mongoose.connection;
+let db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 
 db.once('open', function () {
