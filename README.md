@@ -8,7 +8,8 @@
 Method:GET 
 #localhost:3001/payment?contractid=123&from=2016-12-12&to=2018-12-14 contractid:contract number from:start date to:end date
 # to create a new payment
- Method :POST #localhost:3001/payment for example you can add this body to the POST {
+ Method :POST
+ localhost:3001/payment for example you can add this body to the POST {
 "contractId":"123", "paymentId":"p1", "value":"60", "time":"2018-12-12", "isDeleted":true
 }
 # To change payment fileds 
