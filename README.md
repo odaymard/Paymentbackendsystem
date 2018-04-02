@@ -20,6 +20,9 @@ Method:PATCH(we can use DELETE as well) but becasue delete her is only change th
  localhost:3001/payment?paymentId=p1
 # Things to add in future:
  1-Adding more models.
+ 
  2-Using docker.
+ 
  3-Using some front end technology like react.
+ 
 
